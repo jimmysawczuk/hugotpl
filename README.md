@@ -22,3 +22,10 @@ import(
 )
 ```
 
+Finally, rebuild Hugo:
+
+```bash
+go install github.com/gohugoio/hugo
+```
+
+
