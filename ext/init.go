@@ -1,4 +1,4 @@
-package louvre
+package ext
 
 import (
 	"github.com/gohugoio/hugo/deps"
