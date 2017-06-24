@@ -28,4 +28,3 @@ Finally, rebuild Hugo:
 go install github.com/gohugoio/hugo
 ```
 
-

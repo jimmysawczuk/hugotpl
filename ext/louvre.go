@@ -8,19 +8,19 @@ import (
 	"os"
 )
 
-// New returns a new instance of the collections-namespaced template functions.
+// New returns a new instance of the ext-namespaced template functions.
 func New(deps *deps.Deps) *Namespace {
 	return &Namespace{
 		deps: deps,
 	}
 }
 
-// Namespace provides template functions for the "collections" namespace.
+// Namespace provides the "louvre" template function.
 type Namespace struct {
 	deps *deps.Deps
 }
 
-// Apply takes a map, array, or slice and returns a new slice with the function fname applied over it.
+// Louvre returns a URL to a Louvre-hosted image with the ID and parameters specified.
 func (ns *Namespace) Louvre(id string, params ...interface{}) (template.URL, error) {
 
 	querify := collections.New(ns.deps).Querify
