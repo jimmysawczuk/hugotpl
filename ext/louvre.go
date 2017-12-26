@@ -1,24 +1,11 @@
 package ext
 
 import (
-	"github.com/gohugoio/hugo/deps"
 	"github.com/gohugoio/hugo/tpl/collections"
 
 	"html/template"
 	"os"
 )
-
-// New returns a new instance of the ext-namespaced template functions.
-func New(deps *deps.Deps) *Namespace {
-	return &Namespace{
-		deps: deps,
-	}
-}
-
-// Namespace provides the "louvre" template function.
-type Namespace struct {
-	deps *deps.Deps
-}
 
 // Louvre returns a URL to a Louvre-hosted image with the ID and parameters specified.
 func (ns *Namespace) Louvre(id string, params ...interface{}) (template.URL, error) {

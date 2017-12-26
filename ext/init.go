@@ -21,9 +21,26 @@ func init() {
 			[][2]string{},
 		)
 
+		ns.AddMethodMapping(ctx.Curator,
+			[]string{"curator"},
+			[][2]string{},
+		)
+
 		return ns
 
 	}
 
 	hugointernal.AddTemplateFuncsNamespace(f)
+}
+
+// New returns a new instance of the ext-namespaced template functions.
+func New(deps *deps.Deps) *Namespace {
+	return &Namespace{
+		deps: deps,
+	}
+}
+
+// Namespace provides the "louvre" template function.
+type Namespace struct {
+	deps *deps.Deps
 }
