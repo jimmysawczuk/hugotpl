@@ -21,11 +21,6 @@ func init() {
 			[][2]string{},
 		)
 
-		ns.AddMethodMapping(ctx.Curator,
-			[]string{"curator"},
-			[][2]string{},
-		)
-
 		return ns
 
 	}
