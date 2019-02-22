@@ -33,10 +33,10 @@ func (ns *Namespace) Louvre(id string, params ...interface{}) (template.URL, err
 
 	if mw == "" && mh == "" && ext == "" {
 		return template.URL(fmt.Sprintf("%s/%s", u, id)), nil
-	}
-
-	if ext == "" {
+	} else if ext == "" && (mw != "" || mh != "") {
 		return template.URL(fmt.Sprintf("%s/%s/%sx%s", u, id, mw, mh)), nil
+	} else if ext != "" && (mw == "" && mh == "") {
+		return template.URL(fmt.Sprintf("%s/%s.%s", u, id, ext)), nil
 	}
 
 	return template.URL(fmt.Sprintf("%s/%s/%sx%s.%s", u, id, mw, mh, ext)), nil
